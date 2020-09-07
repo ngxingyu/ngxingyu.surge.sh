@@ -1,0 +1,14 @@
+---
+title: "My First Article"
+slug: "my-first-article"
+summary: "Creating a placeholder page"
+createdAt: 2020-09-07T08:30:04.619Z
+tags: [""]
+---
+
+<script>
+  const assetsBasePath = `blog-posts/2020-09-07-${slug}`;
+</script>
+
+TODO: Add the blog content here...
+#Lorem

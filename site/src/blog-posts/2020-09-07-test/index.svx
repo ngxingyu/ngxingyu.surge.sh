@@ -1,0 +1,13 @@
+---
+title: "Test"
+slug: "test"
+summary: "Learning to create a sapper static site."
+createdAt: 2020-09-07T07:41:00.573Z
+tags: [""]
+---
+
+<script>
+  const assetsBasePath = `blog-posts/2020-09-07-${slug}`;
+</script>
+
+TODO: Add the blog content here...

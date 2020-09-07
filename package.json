@@ -1,0 +1,29 @@
+{
+  "name": "ngxingyu",
+  "version": "1.0.0",
+  "description": "Xing Yu's personal website.",
+  "scripts": {
+    "generate": "plop --plopfile ./generators/index.js",
+    "postinstall": "run-p install:services:*",
+    "install:services:website": "npm install --prefix site",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "XY",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "plop": "^2.7.4",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  }
+}
