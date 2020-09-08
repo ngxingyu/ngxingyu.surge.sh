@@ -53,11 +53,12 @@
 		activeMenu = activeMenu === menuId ? "" : menuId;
 		};
 </script>
-
+<style>
+</style>
 	<svelte:body on:click={() => (activeMenu = '')} />
 
 	{#if isHeaderVisible}
-  <div class:transparent={$headerStore.header.isTransparent}>
+  <div class:transparent={$headerStore.header.isTransparent} class='circuit-board'>
     <div>
       <div class="flex justify-between items-center text-white p-2">
         <div class={`${isSearchVisible ? 'flex' : 'hidden md:flex'} justify-start flex-1`}>

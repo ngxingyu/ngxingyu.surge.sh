@@ -20,7 +20,7 @@
 
 </script>
 
-<div class="hidden md:flex content-center">
+<div class="flex flex-no-wrap">
   {#each icons as icon}
     <A
       class="text-gray-500 hover:text-white p-2 h-10 w-10"
