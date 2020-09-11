@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "clean": "rm -fr __sapper__",
-    "dev": "sapper dev",
-    "build": "sapper build --legacy",
+    "dev": "sapper dev --ext '.svelte .svx'",
+    "build": "sapper build --legacy --ext '.svelte .svx'",
     "preexport": "run-s clean",
-    "export": "NODE_ENV=production sapper export --entry '/ /404'",
+    "export": "NODE_ENV=production sapper export --entry '/ /404 blog widgets about' --ext '.svelte .svx'",
     "postexport": "mv __sapper__/export/404/index.html __sapper__/export/404.html && rm -r __sapper__/export/404 && node generate-sitemap.js",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",

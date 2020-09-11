@@ -2,19 +2,19 @@
 	import { stores } from '@sapper/app';
 	import { headerStore } from "../../stores";
 	import A from "../ui-elements/a.svelte";
-	import Logo from "./logo.svelte";
+	import Logo from "../logo.svelte";
 	import MobileMenu from "./mobile-menu.svelte";
 	import RightNav from "./right-nav.svelte";
 	import ScrollProgressBar from "../blog-post/scroll-progress-bar.svelte";
 	import Search from "./search.svelte";
-  import Favicons from "./favicons.svelte";
+  import Favicons from "../favicons.svelte";
 
 	const { page } = stores();
 	console.log($page.path);
 
 	$: isArticle = $page.path.startsWith("/blog");
 	$: isHeaderVisible = true;//!$headerStore.header.isTransparent;
-	$: isSearchVisible = $page.path === "/";
+	$: isSearchVisible = $page.path === "/blog";
 
 	$: if ($page.path !== "/") {
 		headerStore.setHeaderTransparent(false);
@@ -60,8 +60,8 @@
 	{#if isHeaderVisible}
   <div class:transparent={$headerStore.header.isTransparent} class='circuit-board'>
     <div>
-      <div class="flex justify-between items-center text-white p-2">
-        <div class={`${isSearchVisible ? 'flex' : 'hidden md:flex'} justify-start flex-1`}>
+      <div class="flex justify-between items-center text-gray-200 p-2">
+        <div class={`hidden sm:flex ${isSearchVisible ? 'flex-1' : 'flex-2'} justify-start`}>
           <Favicons />
           {#if isSearchVisible}
           <Search />

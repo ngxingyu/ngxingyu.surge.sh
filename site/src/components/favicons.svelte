@@ -1,5 +1,5 @@
 <script>
-  import A from '../ui-elements/a.svelte';
+	import A from './ui-elements/a.svelte';
 
   const icons = [
     {

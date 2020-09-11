@@ -21,6 +21,20 @@ const onwarn = (warning, onwarn) =>
 	(warning.code === 'CIRCULAR_DEPENDENCY' && /[/\\]@sapper[/\\]/.test(warning.message)) ||
 	onwarn(warning);
 
+const pp = [
+	mdsvex({
+		extension: '.svx',
+        }),
+     autoPreprocess(
+                        {
+                        postcss: {
+                            plugins: [tailwindcss],
+                        },
+                        preserve: ["json", "ld+json"],
+                    }),
+]
+
+
 export default {
 	client: {
 		input: config.client.input(),
@@ -35,15 +49,7 @@ export default {
 				hydratable: true,
                 emitCss: true,
                 extensions: [".svelte", ".svx"],
-                preprocess: [
-                    mdsvex(),
-                    autoPreprocess({
-                        postcss: {
-                            plugins: [tailwindcss],
-                        },
-                        preserve: ["json", "ld+json"],
-                    }),
-                ]
+                preprocess: pp, 
                 }),
             typescript({ sourceMap: dev }),
 			resolve({
@@ -91,17 +97,8 @@ export default {
 				hydratable: true,
                 dev,
                 extensions: [".svelte", ".svx"],
-                preprocess: [
-                    mdsvex(),
-                    autoPreprocess(
-                        {
-                        postcss: {
-                            plugins: [tailwindcss],
-                        },
-                        preserve: ["json", "ld+json"],
-                    }),
-                ]
-			}),
+                preprocess: pp		
+            }),
 			resolve({
 				dedupe: ['svelte']
 			}),

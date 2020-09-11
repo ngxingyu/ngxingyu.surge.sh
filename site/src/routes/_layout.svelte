@@ -7,9 +7,10 @@
 <GlobalCSS />
 
 <SeoHead/>
-<Header/>
-
-<main>
-	<slot></slot>
-	<Footer />
-</main>
+<div class="flex flex-col h-screen justify-between">
+  <Header/>
+  <main class="mb-auto">
+    <slot></slot>
+  </main>
+  <Footer />
+</div>
