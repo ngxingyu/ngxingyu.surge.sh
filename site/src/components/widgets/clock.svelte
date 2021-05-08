@@ -45,7 +45,7 @@
 	}
 </style>
 
-<svg viewBox='-50 -50 100 100'>
+<svg viewBox='-50 -50 100 100' class='mx-auto'>
 	<circle class='clock-face' r='48'/>
 
 	<!-- markers -->

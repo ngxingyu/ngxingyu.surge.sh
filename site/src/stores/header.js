@@ -3,7 +3,8 @@ import { writable } from "svelte/store";
 const createStore = () => {
     const { subscribe, update } = writable({
         header: {
-            isTransparent: true,
+			isTransparent: true,
+			isOpen: false,
             },
         scrollBarProgress: {
             isVisible: false,
@@ -12,14 +13,23 @@ const createStore = () => {
         });
 
     return {
-        subscribe,
+		subscribe,
         setHeaderTransparent: (value) =>
         update((store) => ({
             ...store,
             header: {
-                isTransparent: value,
+				isTransparent: value,
                 },
-            })),
+			})),
+
+		setHeaderOpen: (value) =>
+		update((store)=>({
+			...store,
+			header: {
+				isOpen:(value!==false?true:false),
+				}
+			})),
+
         setScrollBarProgressVisible: (isVisible, readingTime) =>
         update((store) => ({
             ...store,

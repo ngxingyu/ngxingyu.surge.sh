@@ -1,6 +1,7 @@
 
 <script>
-  import { searchStore } from "../../stores";
+	import { searchStore } from "../../stores";
+	export let value;
   let searchInputNode;
   let searchTerm = "";
   $: if (searchTerm === "/") {
@@ -17,9 +18,9 @@
 
 <svelte:body on:keypress={handleBodyKeyPress}/>
 
-<div class="max-w-lg w-full lg:max-w-xs">
+<div class="{value===1?`hidden md:flex max-w-lg w-full lg:max-w-md`:`block md:hidden w-screen`}">
   <label for="search" class="sr-only">Search</label>
-  <div class="relative">
+  <div class="relative w-full">
     <div
       class="absolute inset-y-0 left-0 pl-3 flex items-center
       pointer-events-none">

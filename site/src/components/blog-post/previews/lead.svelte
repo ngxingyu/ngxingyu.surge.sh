@@ -10,6 +10,7 @@
   <A
     href="blog/{post.metadata.slug}"
     class="flex flex-wrap w-full no-underline hover:no-underline">
+		<!--
     <div class="w-full md:w-2/3 rounded-t">
       <picture>
         <source srcset={`${coverImageBasePath}.webp`} type="image/webp" />
@@ -21,7 +22,7 @@
           alt="Cover picture for a blog post titled {post.metadata.title}" />
       </picture>
     </div>
-
+		-->
     <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
       <div
         class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden
@@ -41,11 +42,13 @@
         class="flex-none mt-auto bg-white rounded-b rounded-t-none
         overflow-hidden shadow-lg p-6">
         <div class="flex items-center justify-between">
+					<!--
           <img
             class="w-8 h-8 rounded-full mr-4 avatar"
             data-tippy-content="Author Name"
             src="images/profile-pic.jpg"
-            alt="Avatar of Author" />
+						alt="Avatar of Author" />
+					-->
           <p class="text-gray-900 text-xs md:text-sm">{post.metadata.readingTime.text}</p>
         </div>
       </div>
